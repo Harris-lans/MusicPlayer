@@ -1,0 +1,118 @@
+main
+{
+    flex: 1;
+    overflow-y: scroll;
+}
+
+body
+{
+    overflow: hidden;
+}
+
+main::-webkit-scrollbar 
+{ 
+    width: 0 !important; 
+}
+
+button:focus
+{
+    outline: none;
+}
+
+#app-title
+{
+    background-color:rgb(56, 56, 56);
+    color: white;
+    font-size: 3rem;
+    font-family: 'Lobster', cursive; 
+}
+
+.flex-container
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: calc(100vh - 104px - 5rem);
+}
+
+.controls-container
+{
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+}
+
+.album-art-container
+{
+    text-align: center;
+}
+
+.album-art
+{
+    background-image: url("../images/pray-for-the-wicked-album-art.jpg");
+    background-size: cover;
+    width: 20rem;
+    height: 20rem;
+    display: inline-block;
+    margin-bottom: 7rem;
+}
+
+.song-name
+{
+    margin-top: 7rem;
+}
+
+.player-container
+{
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+}
+
+.card-container
+{
+    text-align: center;
+}
+
+/* Button Stylings */
+
+/* Removing outlines on the button */
+.song-button:focus
+{
+    outline: none;
+}
+
+.category:focus
+{
+    outline: none;
+}
+
+#play-button
+{
+    background-image: url("../images/icons/play-icon.png");
+}
+
+#next-button
+{
+    background-image: url("../images/icons/next-icon.png");
+}
+
+#previous-button
+{
+    background-image: url("../images/icons/next-icon.png");
+    transform: rotate(180deg);
+}
+
+.control-button
+{
+    height: 2rem;
+    width: 2rem;
+    background-size: cover;
+}
+
+/* Utility Classes */
+.center-in-div
+{
+    display: flex;
+    justify-content: center;
+}
