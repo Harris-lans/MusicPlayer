@@ -4,8 +4,7 @@
 *@ copyright  : All rights reserved (C)
 */
 
-const firebase = require("firebase");
-require("firebase/firestore");
+import { to } from './utils.js';
 
 export default class FireBaseFileStreamer
 {   
@@ -14,6 +13,7 @@ export default class FireBaseFileStreamer
         this.initializeFireBaseApp();
 
         // Get a reference to the database service
+        this.storage = firebase.storage();
         this.database = firebase.firestore();
         this.database.settings({
             timestampsInSnapshots: true
@@ -21,20 +21,6 @@ export default class FireBaseFileStreamer
         console.log("Firestore initialized...")
     }
     
-    static streamMusicFile()
-    {
-        
-    }
-    
-    test()
-    {
-        this.database.collection("music").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
-            });
-        });
-    }
-
     initializeFireBaseApp()
     {
         // Initialize Firebase
@@ -48,5 +34,37 @@ export default class FireBaseFileStreamer
         };
         firebase.initializeApp(config);
         console.log("Firebase initialized...");
+    }
+
+    async getMusicFileURL(filePath)
+    {
+        let storageRef = this.storage.ref();
+
+        let [error, data] = await to(storageRef.child(filePath).getDownloadURL());
+
+        if (error) {
+            throw new Error(error);
+        }
+
+        return data;
+    }
+    
+    async getMusicList()
+    {
+        let documentRef = this.database.collection("music");
+
+        let [error, data] = await to(documentRef.get());
+
+        if (error) {
+            throw new Error(error);
+        }
+        
+        let tracks = [];
+        data.forEach(el => {
+            tracks.push({ id: el.id, ...el.data()})
+        });
+
+        return tracks;
+        
     }
 }

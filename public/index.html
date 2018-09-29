@@ -25,33 +25,26 @@
                 <main class="album-art-container">
                     
                     <!-- Selected song name -->
-                    <h5 class="card-title song-name">Hey Look Ma, I made it</h5>
+                    <h5 id="current-song" class="card-title song-name"></h5>
 
                     <!-- Album art -->
                     <div id="album-art" class="album-art"></div>
 
-                    <div class="card text-center">
+                    <div class="card text-center song-list-container">
                         <div class="card-header center-in-div">
                             <ul class="nav nav-tabs card-header-tabs">
                                 <li class="nav-item category">
-                                    <a class="nav-link active" href="#">All Songs</a>
+                                    <a id="all-songs-category" class="nav-link active songs-list-category" href="#">All Songs</a>
                                 </li>
                                 <li class="nav-item category">
-                                    <a class="nav-link" href="#">Selected Playlist</a>
-                                </li>
-                                <li class="nav-item category">
-                                    <a class="nav-link" href="#">All Playlists</a>
+                                    <a id="custom-playlist-category" class="nav-link songs-list-category" href="#">Custom Playlist</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <!-- Song List -->
-                            <div class="list-group">
-                                <button type="button" class="list-group-item list-group-item-action song-button active">Cras justo odio </button>
-                                <button type="button" class="list-group-item list-group-item-action song-button">Dapibus ac facilisis in</button>
-                                <button type="button" class="list-group-item list-group-item-action song-button">Morbi leo risus</button>
-                                <button type="button" class="list-group-item list-group-item-action song-button">Porta ac consectetur ac</button>
-                                <button type="button" class="list-group-item list-group-item-action song-button">Vestibulum at eros</button>
+                            <div id="song-list" class="list-group">
+                                
                             </div>   
 
                         </div>
@@ -60,12 +53,12 @@
                 </main>
         
                 <!-- Music Control Bar -->
-                <footer class="card-footer border-gray">
+                <footer class="card-footer footer control-bar">
 
-                    <div class="progress" style="height: 3px">
-                        <div id="audio-file-progress" class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress footer-elements" style="height: 5px">
+                        <div id="audio-file-progress" class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <div class="controls-container">
+                    <div class="controls-container footer-elements">
                         <div id="previous-button" class="control-button"></div>
                         <div id="play-button" class="control-button"></div>
                         <div id="next-button" class="control-button"></div>
@@ -77,9 +70,10 @@
         </div>
         
         <!-- Adding script files -->
-        <script src="./scripts/libraries/howler.js"></script>
+        <script src="./scripts/libraries/buzz.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-storage.js"></script>
         <script src="./scripts/app.js" type="module"></script>
         
     </body>

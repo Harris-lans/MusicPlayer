@@ -45,11 +45,12 @@ button:focus
 .album-art-container
 {
     text-align: center;
+    background-color: rgb(66, 66, 66);
 }
 
 .album-art
 {
-    background-image: url("../images/pray-for-the-wicked-album-art.jpg");
+    background-image: url("../images/no-album-art.jpg");
     background-size: cover;
     width: 20rem;
     height: 20rem;
@@ -60,6 +61,30 @@ button:focus
 .song-name
 {
     margin-top: 7rem;
+    color: white;
+}
+
+div.card-body
+{
+    background-color: rgb(85, 85, 85);
+}
+
+div.card-header
+{
+    background-color: rgb(37, 37, 37);
+    border: none;
+}
+
+.nav-link.songs-list-category
+{
+    background-color: gray;
+}
+
+.nav-tabs .nav-link.active.songs-list-category
+{
+    background-color: rgb(85, 85, 85);
+    color: white;
+    border-color: transparent; 
 }
 
 .player-container
@@ -67,6 +92,16 @@ button:focus
     width: 100vw;
     height: 100vh;
     display: inline-block;
+}
+
+.player-container.card
+{
+    border: none;
+}
+
+.footer-element
+{
+    margin: auto;
 }
 
 .card-container
@@ -87,10 +122,53 @@ button:focus
     outline: none;
 }
 
+.song-button
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.song-button:hover
+{
+    cursor: pointer;
+}
+
+.play-song-button
+{
+    display: inline-block;
+}
+
+.list-group-item.song-button
+{
+    text-align: left;
+    background-color: gray;
+    color: white;
+}
+
+.modify-icon
+{
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    float: right;
+}
+
+.add-to-playlist-button
+{
+    background-image: url("../images/icons/plus-icon.png");
+}
+
+.remove-from-playlist-button
+{
+    background-image: url("../images/icons/remove-icon.png")
+}
+
+
 #play-button
 {
     background-image: url("../images/icons/play-icon.png");
 }
+
 
 #next-button
 {
@@ -105,9 +183,25 @@ button:focus
 
 .control-button
 {
-    height: 2rem;
-    width: 2rem;
+    height: 4rem;
+    width: 4rem;
     background-size: cover;
+    margin: auto;
+}
+
+.song-list-container.card
+{
+    border: none;
+}
+
+.control-bar.card-footer
+{
+    background-color: rgb(56, 56, 56);
+}
+
+.control-button:hover
+{
+    cursor: pointer;
 }
 
 /* Utility Classes */
